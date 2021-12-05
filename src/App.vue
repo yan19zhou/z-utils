@@ -1,19 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="loading">loading</button>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  methods: {
+    loading() {
+      const loading = this.$loading({type:"ball"});
+      setTimeout(()=>{
+        loading.remove();
+      },2000)
+    }
+  },
+};
 </script>
 
 <style>
